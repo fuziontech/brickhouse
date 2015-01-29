@@ -122,6 +122,26 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-shade-plugin</artifactId>
+			<version>2.3</version>
+			<executions>
+			  <execution>
+			    <phase>package</phase>
+			    <goals>
+			      <goal>shade</goal>
+			    </goals>
+			    <configuration>
+			      <artifactSet>
+			      <includes>
+				<include>com.google.guava:guava:*</include>
+			      </includes>
+			      </artifactSet>
+			    </configuration>
+			  </execution>
+			</executions>
+		      </plugin>
 				<!--
 			<plugin>
 			   <groupId>org.apache.maven.plugins</groupId>
@@ -196,7 +216,7 @@
 	    <dependency>
 	       <groupId>com.google.guava</groupId>
 	       <artifactId>guava</artifactId>
-	       <version>18.0</version>
+	       <version>15.0</version>
 	    </dependency>
 
 	    <dependency>
